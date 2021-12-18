@@ -15,9 +15,9 @@ app.post('/sendmail', async (req, res) => {
     const code = Math.floor(1000 + Math.random() * 9000);
 
     console.log(email, code);
-    let response = await sendMail(email, code);
+    await sendMail(email, code);
 
-    res.end(response);
+    res.end(code);
 });
 
 app.listen(PORT);
